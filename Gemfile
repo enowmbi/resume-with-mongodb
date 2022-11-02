@@ -53,11 +53,11 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # Add annotate for anotating models
   gem "annotate"
-  # # Add rspec-rails for testing
+  # Add rspec-rails for testing
   gem "rspec-rails"
-  # # Add simplecov for test/code coverage
+  # Add simplecov for test/code coverage
   gem "simplecov", require: false
-  # # Add factory_bot_rails for generating factories
+  # Add factory_bot_rails for generating factories
   gem "factory_bot_rails"
   #    # Add shoulda-matchers for oneline matchers /expectations
   gem "shoulda-matchers"
