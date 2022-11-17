@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def whitelist_devise_parameters_for_signup
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:image])
     devise_parameter_sanitizer.permit(:sign_up, keys: [address: %I[country city state street1 street2 zip]])
   end
@@ -21,6 +22,7 @@ class ApplicationController < ActionController::Base
   def whitelist_devise_parameters_for_account_update
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
     devise_parameter_sanitizer.permit(:account_update, keys: [:image])
     devise_parameter_sanitizer.permit(:account_update, keys: [address: %I[country city state street1 street2 zip]])
   end
