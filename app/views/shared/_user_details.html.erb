@@ -1,0 +1,12 @@
+<% if current_user.image.present? %>
+  <%= image_tag(current_user.image.url(:medium), class: "image") %>
+<% else %>
+  <%= image_tag("user-preview.png", class: "image") %>
+<% end %>
+<div class="sub-details" style="margin-left: 30px">
+  <b>First Name: </b><%= current_user.first_name %>
+<br/>
+<b>Last Name: </b><%= current_user.last_name %>
+    <br/> 
+    <b>Email: </b><%= current_user.email %>
+  <br/>
