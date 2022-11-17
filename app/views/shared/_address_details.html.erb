@@ -1,12 +1,12 @@
 <div class="address" style="margin-left: 30px;">
-  <b>Country: </b><%= current_user.address[:country] %>
+  <b>Country: </b><%= current_user.address&[:country] || "" %>
 <br/>
-<b>City: </b><%= current_user.address[:city] %>
+<b>City: </b><%= current_user.address&[:city] || "" %>
     <br/>
-    <b>State: </b><%= current_user.address[:state] %>
+    <b>State: </b><%= current_user.address&[:state] || "" %>
   <br/>
-  <b>Street1: </b><%= current_user.address[:street1] %>
+  <b>Street1: </b><%= current_user.address&[:street1] || "" %>
 <br/>
-<b>Street2: </b><%= current_user.address[:street2] %>                                                                          <br/>
-<b>Zip: </b><%= current_user.address[:zip] %>
+<b>Street2: </b><%= current_user.address&[:street2] || "" %>                                                                          <br/>
+<b>Zip: </b><%= current_user.address&[:zip] || "" %>
    <br/>
