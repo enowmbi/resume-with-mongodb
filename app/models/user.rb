@@ -44,6 +44,9 @@ class User
   has_mongoid_attached_file :image, styles: { medium: "300x300", thumb: "100x100#", original: "1920x1680>" }
   validates_attachment_content_type :image, content_type: %w[image/jpeg image/jpg image/png]
 
-  field :profile, type: String
   embeds_one :address
+  embeds_many :skill_sets
+
+
+  default_scope -> { order("skill_set._id desc") } # TODO default scope
 end

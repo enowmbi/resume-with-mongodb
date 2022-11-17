@@ -9,6 +9,15 @@
       <%= render "shared/address_details" %>
     </div>
     </p>
+    <h3>Skill set </h3>
+    <div id="new-skill-set-form">
+      <%= render "skill_sets/form", skill_set: @skill_set %>
+    </div>
+    <div id="skill_sets">
+      <% current_user.skill_sets.each do |skill_set| %>
+        <%= render "skill_sets/skill_set", skill_set: skill_set %>
+      <% end %>
+    </div>
   </div>  
   <p>
   <%= link_to("Edit Account", edit_user_registration_path, class: "btn-square-less-space") %>

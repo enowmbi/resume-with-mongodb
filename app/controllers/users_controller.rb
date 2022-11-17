@@ -1,3 +1,5 @@
 class UsersController < ApplicationController
-  def show; end
+  def show
+    @skill_set = SkillSet.new
+  end
 end
