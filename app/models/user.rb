@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Paperclip
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -38,9 +40,10 @@ class User
   field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   field :locked_at,       type: Time
-  include Mongoid::Timestamps
+  ## Paperclip image
+  has_mongoid_attached_file :image, styles: { medium: "300x300", thumb: "100x100#", original: "1920x1680>" }
+  validates_attachment_content_type :image, content_type: %w[image/jpeg image/jpg image/png]
 
-  embeds_one :handle
-  embeds_one :address
   field :profile, type: String
+  embeds_one :address
 end
