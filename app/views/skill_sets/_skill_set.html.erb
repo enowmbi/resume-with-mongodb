@@ -2,9 +2,10 @@
   <div class="skill_set">
     <div class="sub-details">
       <br/>
-      <%= skill_set.category %>
-      <br/>
-      <%= skill_set.entries %>
+      <b><%= skill_set.category %></b> 
+      <% skill_set.entries.each do |entry| %>
+        <%= entry %>
+      <% end %>
     </div>
     <div class="edit-button">
       <%# <%= button_to("Edit",edit_contact_path(contact), method: :post) %1> %>
@@ -13,5 +14,4 @@
       <%# <%= button_to("Delete",contact_path(contact), method: :delete) %1> %>
     </div>
   </div>
-  <hr/>
 </div>
