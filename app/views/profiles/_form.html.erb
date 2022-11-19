@@ -1,0 +1,13 @@
+<%= form_with(model: profile, url: user_profile_path(current_user), method: :post)  do |profile| %>
+  <div>
+    <%= profile.label :summary %>
+    <%= profile.text_field :summary %>
+  </div>
+  <div>
+    <%= profile.label :github_url %>
+    <%= profile.text_field :github_url %>
+  </div>
+  <div>
+  </div>
+  <%= profile.submit %>
+<% end %>
