@@ -1,11 +1,11 @@
-<%= form_with(model: [current_user, current_user.skill_sets.build])  do |skill_set_form| %>
+<%= form_with(model: [current_user, current_user.skill_sets.build])  do |skill_set| %>
   <div>
-    <%= skill_set_form.label :category %>
-    <%= skill_set_form.text_field :category %>
+    <%= skill_set.label :category %>
+    <%= skill_set.text_field :category %>
   </div>
   <div>
-    <%= skill_set_form.label :entries %>
-    <%= skill_set_form.text_area :entries, multiple: true %>
+    <%= skill_set.label :entries %>
+    <%= skill_set.text_area :entries, multiple: true %>
   </div>
-  <%= skill_set_form.submit %>
+  <%= skill_set.submit %>
 <% end %>
