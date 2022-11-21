@@ -1,7 +1,11 @@
-<%= form_with(model: profile, url: user_profile_path(current_user), method: :post)  do |profile| %>
-  <div>
-    <%= profile.label :summary %>
-    <%= profile.text_field :summary %>
+<% if profile.nil? %>
+  <% profile_model = [current_user, current_user.build_profile] %>
+<% else %>
+  <% profile_model = [current_user, profile] %>
+<% end %>
+<%= form_with(model: profile_model)  do |profile| %>
+  <%= profile.label :summary %>
+  <%= profile.text_field :summary %>
   </div>
   <div>
     <%= profile.label :github_url %>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     resources :skill_sets
-    resource :profile
+    resources :profiles, only: [:create, :update]
   end
   devise_for :user
 end
