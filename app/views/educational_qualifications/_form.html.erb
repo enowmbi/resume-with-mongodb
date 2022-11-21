@@ -1,0 +1,21 @@
+<%= form_with(model: [current_user, current_user.educational_qualifications.build])  do |educational_qualification| %>
+  <div>
+    <%= educational_qualification.label :start_date %>
+    <%= educational_qualification.date_field :start_date %>
+    <%= educational_qualification.label :end_date %>
+    <%= educational_qualification.date_field :end_date %>
+  </div>
+  <div>
+    <%= educational_qualification.label :institution %>
+    <%= educational_qualification.text_field :institution %>
+  </div>
+  <div>
+    <%= educational_qualification.label :qualification %>
+    <%= educational_qualification.text_field :qualification %>
+  </div>
+  <div>
+    <%= educational_qualification.label :visible %>
+    <%= educational_qualification.text_field :visible %>
+  </div>
+  <%= educational_qualification.submit %>
+<% end %>

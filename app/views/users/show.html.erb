@@ -34,6 +34,15 @@
         <%= render "experiences/experience", experience: experience if experience.company %>
       <% end %>
     </div>
+    <h3>Education </h3>
+    <div id="new-educational-qualification-form">
+      <%= render "educational_qualifications/form", educational_qualification: @educational_qualification %>
+    </div>
+    <div id="educational_qualifications">
+      <% current_user.educational_qualifications.each do |educational_qualification| %>
+        <%= render "educational_qualifications/educational_qualification", educational_qualification: educational_qualification if educational_qualification.institution %>
+      <% end %>
+    </div>
   </div>  
   <p>
   <%= link_to("Edit Account", edit_user_registration_path, class: "btn-square-less-space") %>
