@@ -14,11 +14,6 @@
     <div id="new-profile-form">
       <%= render "profiles/form", profile: @profile %>
     </div>
-    <div id="profile-entries">
-      <%# <% current_user.profile.links.each do |link| %1> %>
-        <%# <%= render "profiles/link", link: link %1> %>
-      <%# <% end %1> %>
-    </div>
     <hr/>
     <h3>Skill set </h3>
     <div id="new-skill-set-form">
@@ -30,6 +25,15 @@
       <% end %>
     </div>
     <hr/>
+    <h3>Experience </h3>
+    <div id="new-experience-form">
+      <%= render "experiences/form", experience: @experience %>
+    </div>
+    <div id="experiences">
+      <% current_user.experiences.each do |experience| %>
+        <%= render "experiences/experience", experience: experience if experience.company %>
+      <% end %>
+    </div>
   </div>  
   <p>
   <%= link_to("Edit Account", edit_user_registration_path, class: "btn-square-less-space") %>

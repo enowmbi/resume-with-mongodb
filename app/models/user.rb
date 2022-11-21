@@ -47,6 +47,7 @@ class User
   embeds_one :address
   embeds_many :skill_sets
   embeds_one :profile
+  embeds_many :experiences
 
   # default_scope -> { order("skill_set._id desc") } # TODO default scope
 end

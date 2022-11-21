@@ -1,0 +1,29 @@
+<div id="<%= dom_id experience %>" >
+  <div class="experience">
+    <div class="sub-details">
+      <br/>
+      <b>Company:</b> <%= experience.company %> 
+    <br/>
+    <b>Start Date:</b> <%= experience.start_date %> 
+  <% if experience.still_work_here? %>
+    <b>Still work here:</b> <%= experience.still_work_here %> 
+<% else %>
+  <b>End Date:</b> <%= experience.end_date %> 
+<% end %>
+    <br/>
+    <b>Position:</b> <%= experience.position %> 
+  <b>Location:</b> <%= experience.location %> 
+<br/>
+<b>Achievements:</b> <%= experience.achievements %> 
+<br/>
+      <b>Tools:</b> <%= experience.tools %> 
+
+    </div>
+    <div class="edit-button">
+      <%# <%= button_to("Edit",edit_contact_path(contact), method: :post) %1> %>
+    </div>
+    <div class="delete-button">
+      <%# <%= button_to("Delete",contact_path(contact), method: :delete) %1> %>
+    </div>
+  </div>
+</div>

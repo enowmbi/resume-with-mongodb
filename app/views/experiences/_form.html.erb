@@ -1,0 +1,35 @@
+<%= form_with(model: [current_user, current_user.experiences.build])  do |experience| %>
+  <div>
+    <%= experience.label :start_date %>
+    <%= experience.date_field :start_date %>
+    <%= experience.label :end_date %>
+    <%= experience.date_field :end_date %>
+    <%= experience.check_box :still_work_here %>
+    <%= experience.label :still_work_here %>
+  </div>
+  <div>
+    <%= experience.label :company %>
+    <%= experience.text_field :company %>
+  </div>
+  <div>
+    <%= experience.label :position %>
+    <%= experience.text_field :position %>
+  </div>
+  <div>
+    <%= experience.label :location %>
+    <%= experience.text_field :location %>
+  </div>
+  <div>
+    <%= experience.label :visible %>
+    <%= experience.text_field :visible %>
+  </div>
+  <div>
+    <%= experience.label :achievements %>
+    <%= experience.text_area :achievements, multiple: true %>
+  </div>
+  <div>
+    <%= experience.label :tools %>
+    <%= experience.text_area :tools, multiple: true %>
+  </div>
+  <%= experience.submit %>
+<% end %>
